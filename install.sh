@@ -51,9 +51,9 @@ _rpcPassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 ; echo '')
 # Get the IP address of your vps which will be hosting the swiftnode
 _nodeIpAddress=$(curl -s 4.icanhazip.com)
 if [[ ${_nodeIpAddress} =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-  external_ip_line="externalip=${_nodeIpAddress}:8544"
+  external_ip_line="swiftnodeaddr=${_nodeIpAddress}:8544"
 else
-  external_ip_line="#externalip=external_IP_goes_here:8544"
+  external_ip_line="#swiftnodeaddr=external_IP_goes_here:8544"
 fi
 
 # Make a new directory for swiftcash daemon
@@ -70,6 +70,7 @@ rpcallowip=127.0.0.1
 listen=1
 server=1
 daemon=1
+txindex=1
 maxconnections=64
 swiftnode=1
 $external_ip_line
