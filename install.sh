@@ -155,5 +155,5 @@ ufw --force enable
 # Run cpulimit to keep the cpu usage below 50%
 cpulimit -P /usr/bin/swiftcashd -l 50 &
 
-# Reload the SSH config to activivate the custom port if selected
+# Reload the SSH config to activate the custom port if selected
 systemctl reload sshd
