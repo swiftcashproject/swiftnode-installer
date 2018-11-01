@@ -13,7 +13,7 @@
 
 #### Login to your vps as root, download the install.sh file and then run it, enter the SwiftNodeKey you got above when asked for SwiftNode GenKey:
 ```
-wget https://raw.githack.com/swiftcashproject/swiftnode-installer/master/install.sh
+wget https://raw.githack.com/swiftcashproject/swiftnode-installer/master/install.sh -O install.sh
 bash ./install.sh
 ```
 
