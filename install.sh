@@ -106,11 +106,6 @@ if ! crontab -l | grep "@reboot swiftcashd"; then
   (crontab -l ; echo "@reboot swiftcashd") | crontab -
 fi
 
-# Create a cronjob for making sure cpulimit runs after reboot
-if ! crontab -l | grep "@reboot cpulimit"; then
-  (crontab -l ; echo "@reboot cpulimit -P /usr/bin/swiftcashd -l 50") | crontab -
-fi
-
 # Create a cronjob for making sure swiftcashd is always running
 if ! crontab -l | grep "~/swiftnode/makerun.sh"; then
   (crontab -l ; echo "*/5 * * * * ~/swiftnode/makerun.sh") | crontab -

@@ -11,7 +11,7 @@ else
   swiftcashd &
 fi
 
-if ! ps -A | grep cpulimit > /dev/null
+if ! ps -Af | grep cpulimit | grep swiftcashd > /dev/null
 then
   cpulimit -P /usr/bin/swiftcashd -l 50
 fi
