@@ -4,8 +4,7 @@
 #### This shell script comes with 4 cronjobs: 
 1. Make sure the daemon is always running: `makerun.sh`
 2. Make sure the daemon is never stuck: `checkdaemon.sh`
-3. Make sure swiftcash is always up-to-date: `upgrade.sh`
-4. Clear the log file every other day: `clearlog.sh`
+3. Clear the log file every other day: `clearlog.sh`
 
 #### Take note of the following points
 1. You need exactly 20K SWIFT sent to a unique SwiftCash address

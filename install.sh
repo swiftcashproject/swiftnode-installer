@@ -96,7 +96,6 @@ cd ~/swiftnode/
 # Download the appropriate scripts
 wget https://raw.githubusercontent.com/swiftcashproject/swiftnode-installer/master/makerun.sh
 wget https://raw.githubusercontent.com/swiftcashproject/swiftnode-installer/master/checkdaemon.sh
-wget https://raw.githubusercontent.com/swiftcashproject/swiftnode-installer/master/upgrade.sh
 wget https://raw.githubusercontent.com/swiftcashproject/swiftnode-installer/master/clearlog.sh
 
 #install cpulimit
@@ -122,11 +121,6 @@ if ! crontab -l | grep "~/swiftnode/checkdaemon.sh"; then
   (crontab -l ; echo "*/30 * * * * ~/swiftnode/checkdaemon.sh") | crontab -
 fi
 
-# Create a cronjob for making sure swiftcashd is always up-to-date
-# if ! crontab -l | grep "~/swiftnode/upgrade.sh"; then
-#  (crontab -l ; echo "0 0 */1 * * ~/swiftnode/upgrade.sh") | crontab -
-# fi
-
 # Create a cronjob for clearing the log file
 if ! crontab -l | grep "~/swiftnode/clearlog.sh"; then
   (crontab -l ; echo "0 0 */2 * * ~/swiftnode/clearlog.sh") | crontab -
@@ -135,7 +129,6 @@ fi
 # Give execute permission to the cron scripts
 chmod 0700 ./makerun.sh
 chmod 0700 ./checkdaemon.sh
-chmod 0700 ./upgrade.sh
 chmod 0700 ./clearlog.sh
 
 # Change the SSH port
