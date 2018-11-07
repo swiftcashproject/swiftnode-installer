@@ -4,9 +4,7 @@
 # Add the following to the crontab (i.e. crontab -e)
 # */5 * * * * ~/swiftnode/makerun.sh
 
-if ps -A | grep swiftcashd > /dev/null
-then
-  exit
+if ! ps -A | grep swiftcashd > /dev/null
 else
   swiftcashd &
 fi
