@@ -32,12 +32,6 @@ done
 # printf "Press Ctrl+C to cancel or Enter to continue: "
 # read IGNORE
 
-cd
-# Changing the SSH Port to a custom number is a good security measure against DDOS attacks
-printf "Custom SSH Port(Enter to ignore): "
-read VARIABLE
-_sshPortNumber=${VARIABLE:-22}
-
 # Get a new privatekey by going to console >> debug and typing swiftnode genkey
 printf "SwiftNode GenKey: "
 read _nodePrivateKey
@@ -126,15 +120,12 @@ chmod 0700 ./makerun.sh
 chmod 0700 ./checkdaemon.sh
 chmod 0700 ./clearlog.sh
 
-# Change the SSH port
-sed -i "s/[#]\{0,1\}[ ]\{0,1\}Port [0-9]\{2,\}/Port ${_sshPortNumber}/g" /etc/ssh/sshd_config
-
 # Firewall security measures
 apt install ufw -y
 ufw disable
 ufw allow 8544
-ufw allow "$_sshPortNumber"/tcp
-ufw limit "$_sshPortNumber"/tcp
+ufw allow 22/tcp
+ufw limit 22/tcp
 ufw logging on
 ufw default deny incoming
 ufw default allow outgoing
@@ -142,6 +133,3 @@ ufw --force enable
 
 # Run cpulimit to keep the cpu usage below 50%
 cpulimit -P /usr/bin/swiftcashd -l 50 &
-
-# Reload the SSH config to activate the custom port if selected
-systemctl reload sshd
