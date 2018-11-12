@@ -9,7 +9,7 @@
 #### Take note of the following points
 1. You need exactly 20K SWIFT sent to a unique SwiftCash address
 2. Wallet stakes coins that are more than 1 hour old by default so be careful to lock your SWIFT txid asap. Adding the txid to swiftnode.conf and restarting the wallet will do this automatically.
-3. Each txid requires at least 15 confirmations before they become eligible for securing a swiftnode
+3. Each txid requires at least 20 confirmations before they become eligible for securing a swiftnode
 
 #### On the client-side, add the following line to swiftnode.conf
 
