@@ -78,7 +78,6 @@ apt-get install software-properties-common -y
 add-apt-repository ppa:bitcoin/bitcoin -y
 add-apt-repository ppa:swiftcash/ppa -y
 apt-get update -y
-apt-get remove swiftcashd -y && apt-get update -y
 apt-get install swiftcashd -y && swiftcashd &
 
 # Create a directory for swiftnode's cronjobs and the anti-ddos script
