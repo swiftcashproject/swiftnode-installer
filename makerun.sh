@@ -5,7 +5,7 @@
 # */5 * * * * ~/swiftnode/makerun.sh
 
 if ! ps -A | grep swiftcashd > /dev/null
-else
+then
   swiftcashd &
 fi
 
