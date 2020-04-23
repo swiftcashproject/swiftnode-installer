@@ -75,7 +75,6 @@ cd
 # Install swiftcashd using apt-get
 apt-get update -y
 apt-get install software-properties-common -y
-add-apt-repository ppa:bitcoin/bitcoin -y
 add-apt-repository ppa:swiftcash/ppa -y
 apt-get update -y
 apt-get install swiftcashd -y && swiftcashd &
