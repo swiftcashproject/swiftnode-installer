@@ -106,7 +106,7 @@ fi
 
 # Create a cronjob for making sure the daemon is never stuck
 if ! crontab -l | grep "~/swiftnode/checkdaemon.sh"; then
-  (crontab -l ; echo "*/120 * * * * ~/swiftnode/checkdaemon.sh") | crontab -
+  (crontab -l ; echo "*/180 * * * * ~/swiftnode/checkdaemon.sh") | crontab -
 fi
 
 # Create a cronjob for clearing the log file
